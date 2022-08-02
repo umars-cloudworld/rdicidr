@@ -34,7 +34,7 @@ jobs:
       - name: Checkout the repo on the Staging Server
         run: ssh staging git clone "https://github.com/ali-saeed91/rdicidr.git"
 
-      - name: goto App folder
+      - name: goto App folders
         run: ssh staging cd rdicidr
 
       - name: Install
