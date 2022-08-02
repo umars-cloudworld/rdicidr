@@ -34,8 +34,8 @@ jobs:
       - name: Checkout the repo on the Staging Server
         run: ssh staging git clone "https://github.com/ali-saeed91/rdicidr.git"
 
-      - name: goto App folders
-        run: ssh staging cd rdicidr && npm init
+      - name: goto App folder
+        run: ssh staging cd rdicidr
 
       - name: Install
         run: ssh staging npm install -y
