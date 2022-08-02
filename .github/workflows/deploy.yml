@@ -32,9 +32,7 @@ jobs:
           SSH_HOST: ${{ secrets.SSH_HOST }}
       
       - name: Checkout the repo on the Staging Server
-        run: ssh staging git clone "https://github.com/ali-saeed91/rdicidr.git"
-
-
+        run: ssh staging "git clone https://github.com/ali-saeed91/rdicidr.git || true"
            
       - name: Install
         run: ssh staging 'cd rdicidr && npm install -y'
@@ -43,6 +41,6 @@ jobs:
         run: ssh staging 'cd rdicidr && npm run lint'
 
       - name: Start the app
-        run: ssh staging 'cd rdicidr && npm run start'
+        run: ssh staging 'cd rdicidr && npm run start &'
 
         
