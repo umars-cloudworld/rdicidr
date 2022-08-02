@@ -41,6 +41,9 @@ jobs:
         run: ssh staging 'cd rdicidr && npm run lint'
 
       - name: Start the app
+        timeout-minutes: 1 # Times out after 1 minute
         run: ssh staging 'cd rdicidr && npm run start&'
+
+
 
         
