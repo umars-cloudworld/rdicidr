@@ -40,6 +40,9 @@ jobs:
       - name: Lint
         run: ssh staging 'cd rdicidr && npm run lint'
 
+      - name: Kill previous Node
+        run: ssh staging 'sudo killall node' 
+
       - name: Start the app
         timeout-minutes: 1 # Times out after 1 minute
         run: ssh staging 'cd rdicidr && npm run start&'
