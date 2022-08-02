@@ -34,8 +34,19 @@ jobs:
       - name: Checkout the repo on the Staging Server
         run: ssh staging git clone "https://github.com/ali-saeed91/rdicidr.git"
 
-      - name: Test the App
-        run: |
-            ssh staging cd rdicidr && npm init -y &&
-            npm install -y && npm run lint -y &&
-            npm run test -y && npm run start
+      - name: goto App folder
+        run: ssh staging cd rdicidr
+        
+      - name: Initialise
+        run: ssh staging sudo npm init
+
+      - name: Install
+        run: ssh staging sudo npm install -y
+
+      - name: Lint
+        run: ssh staging sudo npm run lint
+
+      - name: Start the app
+        run: ssh staging sudo npm run start
+
+        
