@@ -1,0 +1,46 @@
+{
+  "name": "rdicidr",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "5.16.4",
+    "@testing-library/react": "13.3.0",
+    "@testing-library/user-event": "14.3.0",
+    "node-sass": "7.0.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint ./src/",
+    "prettier": "prettier -c ./src/",
+    "start:prod": "node src/App.js"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "main": "index.js",
+  "license": "MIT",
+  "description": "Ok, let's get this out of the way. Why did I choose that name? I chose the name because palindromes are fun. The app's name stands for RDerik's Interactive  CIDR (RDICIDR). I had to add the Interactive to make the name work. I hope you like it.",
+  "author": ""
+}

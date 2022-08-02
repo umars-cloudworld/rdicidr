@@ -1,0 +1,44 @@
+pipeline {
+    agent any
+    tools {
+        terraform 'terraform'
+    }
+    stages {
+        stage ("git checkout") {
+            steps {
+                git branch: 'main', credentialsId: 'Github_Login', url: 'https://github.com/umars-cloudworld/terraformjenkinspipeline.git'
+       
+            }
+        }
+        stage ("build") {
+            steps {
+                sh 'npm install'
+            }
+         
+        }   
+        stage ("testing") {
+            steps {
+                sh 'npm testing'
+            }
+         
+        }   
+        stage ("Terraform init") {
+            steps {
+                sh ('terraform init');
+            }
+         
+        }   
+        stage ("Terraform Apply") {
+             steps {
+                sh ('terraform apply --auto-approve');
+            }
+        }
+        stage ("restart app") {
+             steps {
+                sh '''#!/bin/bash
+                sudo restart nodeapp
+                '''
+            }
+        }
+    }
+}
