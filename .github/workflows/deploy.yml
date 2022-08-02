@@ -36,17 +36,17 @@ jobs:
 
       - name: goto App folder
         run: ssh staging cd rdicidr
-        
+
       - name: Initialise
-        run: ssh staging sudo npm init
+        run: ssh staging npm init
 
       - name: Install
-        run: ssh staging sudo npm install -y
+        run: ssh staging npm install -y
 
       - name: Lint
-        run: ssh staging sudo npm run lint
+        run: ssh staging npm run lint
 
       - name: Start the app
-        run: ssh staging sudo npm run start
+        run: ssh staging npm run start
 
         
